@@ -42,7 +42,7 @@ Segue os requisitos funcionais do desafio:
 
 ### JSON Server
 
-Para realizar as integrações com o **back-end** disponibilizamos o aquivo **db.json** com as informações necessária para realizar a integração.
+Para realizar as integrações com o **back-end** disponibilizamos o arquivo **db.json** com as informações necessárias para realizar a integração.
 O arquivo está na pasta **json-server** na raiz do projeto.
 
 OBS: segue a [documentação do JSON server](https://github.com/typicode/json-server) para sua utilização
