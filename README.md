@@ -23,7 +23,7 @@ O teste consiste em criar um fluxo de carrinho de compras simples, com catalogo 
 
 Segue um esboço da ideia para facilitar a visualização do carrinho, mas fique a vontade para utilizar sua criatividade:
 
-![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_wframe.png)
+![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_prot.png)
 
 Segue os requisitos funcionais do desafio:
 
