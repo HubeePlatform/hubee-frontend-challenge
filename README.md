@@ -25,6 +25,8 @@ Segue um esboço da ideia para facilitar a visualização do carrinho, mas fique
 
 ![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_prot.png)
 
+Link para o protótipo no figma: [bit.ly/hbfront](http://bit.ly/hbfront)
+
 Segue os requisitos funcionais do desafio:
 
 - O sistema deve buscar e exibir um catalogo de produtos;
