@@ -79,3 +79,4 @@ No mais, fique a vontade para utilizar outras ferramentas que desejar.
 - Em caso de dúvidas, [abra uma issue](https://github.com/HubeePlatform/hubee-frontend-challenge/issues) ou envie um e-mail para **eng.hubee@gmail.com.**
 
 ### **Boa sorte.** 🚀
+
