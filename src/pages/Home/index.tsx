@@ -1,51 +1,61 @@
-import { useEffect, useState } from "react";
-import {
-  Container,
-  Content,
-  CardWrapper,
-  CardImage,
-  WrapperValue,
-  ButtonBuy,
-} from "./styles";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { api } from "../../services/api";
+import { addProduct } from "../../store/modules/cart/actions";
 import { formatPrice } from "../../utils/format";
+import {
+  ButtonBuy,
+  CardImage,
+  CardWrapper,
+  Container,
+  Content,
+  WrapperValue,
+} from "./styles";
 
-interface Product {
+interface IProduct {
   id: number;
   name: string;
   price: number;
   url: string;
 }
 
-interface ProductFormatted extends Product {
+interface IProductFormatted extends IProduct {
   priceFormatted: string;
+  amount: number;
 }
 
 const Cart = (): JSX.Element => {
-  const [products, setProducts] = useState<ProductFormatted[]>([]);
+  const [products, setProducts] = useState<IProductFormatted[]>([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function loadProducts() {
       const responseApi = await api.get("products");
-      const responseProducts: Product[] = responseApi.data;
-      const ProductFormated: ProductFormatted[] = responseProducts.map(
+      const responseProducts: IProduct[] = responseApi.data;
+      const ProductFormated: IProductFormatted[] = responseProducts.map(
         (product) => {
           return {
             ...product,
             priceFormatted: formatPrice(product.price),
+            amount: 0,
           };
         }
       );
       setProducts(ProductFormated);
-      console.log(ProductFormated);
     }
 
     loadProducts();
   }, []);
+
+  const handleAddProduct = useCallback(
+    (product: IProductFormatted) => {
+      dispatch(addProduct(product));
+    },
+    [dispatch]
+  );
 
   return (
     <Container>
@@ -77,6 +87,7 @@ const Cart = (): JSX.Element => {
                 variant="contained"
                 size="large"
                 color="primary"
+                onClick={() => handleAddProduct(product)}
               >
                 Comprar
               </ButtonBuy>

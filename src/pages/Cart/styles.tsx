@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
 import IconButton from "@material-ui/core/IconButton";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 
 export const Container = styled.div`
   @media (max-width: 640px) {
@@ -34,26 +36,63 @@ export const WrapperTitle = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const WrapperProducts = styled.div`
-  width: 100%;
+export const ContentCartEmpty = styled.div`
   display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 0 auto;
+
+  h2 {
+    color: var(--blue);
+    font-size: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  img {
+    width: 20rem;
+    height: 20rem;
+  }
+`;
+
+export const WrapperProducts = styled(Card)`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
   flex-direction: row;
   margin: 0 auto;
   border-radius: 0.3rem;
   background: var(--white);
+
+  @media (max-width: 340px) {
+    padding: 1rem;
+  }
+`;
+
+export const CardImage = styled(CardMedia)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  width: 100%;
 `;
 
 export const Products = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
 
-  span {
+  p {
+    width: 100%;
     color: var(--text-body);
     font-weight: 500;
+    text-align: center;
   }
 `;
 
@@ -75,7 +114,7 @@ export const Footer = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin: 2rem 0 4rem 0;
   margin-left: auto;
   align-items: flex-end;
   justify-content: center;
@@ -95,7 +134,7 @@ export const Footer = styled.div`
 
 export const Input = styled(TextField)`
   width: 100%;
-  height: 54px;
+  height: 52px;
   margin-bottom: 5rem;
 `;
 

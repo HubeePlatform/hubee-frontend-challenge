@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "react-toastify/dist/ReactToastify.css";
 
 export default createGlobalStyle`
   :root{
@@ -32,8 +33,6 @@ export default createGlobalStyle`
       font-size: 78.5%;
     }
 
-    //REM = 16PX
-
   }
 
   body{
@@ -50,8 +49,4 @@ export default createGlobalStyle`
     font-weight: 600;
   }
 
-  [disable] {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
 `;
