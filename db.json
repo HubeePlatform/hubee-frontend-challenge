@@ -1,0 +1,282 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Camera fotografica",
+      "price": 1000.5,
+      "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    },
+    {
+      "id": 2,
+      "name": "Celular",
+      "price": 2599.99,
+      "url": "https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    },
+    {
+      "id": 3,
+      "name": "Headset",
+      "price": 699,
+      "url": "https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    },
+    {
+      "id": 4,
+      "name": "Notebook",
+      "price": 7444.55,
+      "url": "https://images.pexels.com/photos/5715853/pexels-photo-5715853.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    },
+    {
+      "id": 5,
+      "name": "Monitor",
+      "price": 1099.99,
+      "url": "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    },
+    {
+      "id": 6,
+      "name": "Teclado",
+      "price": 45.25,
+      "url": "https://images.pexels.com/photos/585752/pexels-photo-585752.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    },
+    {
+      "id": 7,
+      "name": "Controle playstation",
+      "price": 128.99,
+      "url": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    },
+    {
+      "id": 8,
+      "name": "Playstation",
+      "price": 5000.5,
+      "url": "https://images.pexels.com/photos/4219884/pexels-photo-4219884.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    },
+    {
+      "id": 9,
+      "name": "Rolex submariner",
+      "price": 99442.41,
+      "url": "https://images.pexels.com/photos/47856/rolex-wrist-watch-clock-gmt-47856.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    },
+    {
+      "id": 10,
+      "name": "Tablet",
+      "price": 700.99,
+      "url": "https://images.pexels.com/photos/221185/pexels-photo-221185.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    }
+  ],
+  "coupons": [
+    {
+      "key": "hubee",
+      "isActive": true,
+      "rebatePercentage": 0.8
+    },
+    {
+      "key": "hubee++",
+      "isActive": true,
+      "rebatePercentage": 15
+    },
+    {
+      "key": "PRIMEIRA_COMPRA",
+      "isActive": false,
+      "rebatePercentage": 10
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "coupon": "hubee",
+      "items": [
+        {
+          "productId": 1,
+          "amount": 2
+        }
+      ],
+      "totalPrice": 10.7
+    },
+    {
+      "id": "0.9997",
+      "coupon": "hubee",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 992.496
+    },
+    {
+      "id": "0.8739",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 1
+          },
+          {
+            "id": 2,
+            "name": "Celular",
+            "price": 2599.99,
+            "url": "https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 3600.49
+    },
+    {
+      "id": "0.4655",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 3,
+            "name": "Headset",
+            "price": 699,
+            "url": "https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 699
+    },
+    {
+      "id": "0.6357",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 2,
+            "name": "Celular",
+            "price": 2599.99,
+            "url": "https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 2599.99
+    },
+    {
+      "id": "0.5122",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 1000.5
+    },
+    {
+      "id": "0.1484",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 2,
+            "name": "Celular",
+            "price": 2599.99,
+            "url": "https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 2599.99
+    },
+    {
+      "id": "0.1048",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 1000.5
+    },
+    {
+      "id": "0.6001",
+      "coupon": "",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 1
+          }
+        ]
+      ],
+      "totalPrice": 1000.5
+    },
+    {
+      "id": "0.1682",
+      "coupon": "hubee++",
+      "items": [
+        [
+          {
+            "id": 1,
+            "name": "Camera fotografica",
+            "price": 1000.5,
+            "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+            "amount": 4
+          }
+        ]
+      ],
+      "totalPrice": 3401.7
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "cartId": 1,
+      "finalized": true
+    },
+    {
+      "id": "0.2738",
+      "cartId": "0.6357",
+      "finalized": true
+    },
+    {
+      "id": "0.3893",
+      "cartId": "0.5122",
+      "finalized": true
+    },
+    {
+      "id": "0.6005",
+      "cartId": "0.1484",
+      "finalized": true
+    },
+    {
+      "id": "0.7222",
+      "cartId": "0.1048",
+      "finalized": true
+    },
+    {
+      "id": "0.6883",
+      "cartId": "0.6001",
+      "finalized": true
+    },
+    {
+      "id": "0.1452",
+      "cartId": "0.1682",
+      "finalized": true
+    }
+  ]
+}

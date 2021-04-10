@@ -1,84 +1,107 @@
-# Hubee Frontend Challenge
+<h4 align="center">
+    <img alt="" src=".github/logo.svg" />
+    <br/>
+    <br/>
+</h4>
 
-![N|Solid](https://media-exp1.licdn.com/dms/image/C4E0BAQHOp41isf2byw/company-logo_200_200/0/1603390307024?e=1625097600&v=beta&t=BjntmL7iePrkYJ7Ci5xqlyHh53Qn_FyUICHyLtDYegg)
+<p align="center">
+  Hubee frontend challenge 
+  <br>
+  <br>
+  
+---
 
-O desenvolvedor front-end é o profissional que será responsável pelo desenvolvimento e manutenção do ecossistema das aplicações do time Hubee. Este desafio avaliará diversos aspectos do candidato, tornando-se então a entrega deste obrigatória para conclusão do processo.
+## :dart: Como funciona?
 
-Caso não consiga entregar dentro do prazo ou completá-lo por algum motivo, favor nos reportar. O objetivo desse desafio é demonstrar sua experiência e conhecimento como desenvolvedor, assim saberemos como você pensa e resolve os problemas do cotidiano.
+O projeto consiste em ser uma _loja virtual_.
 
-O processo de avaliação levará em consideração os seguintes pontos:
+### Funcionalidades?
 
-- Organização e clareza;
-- Lógica de programação;
-- Boas práticas;
-- Habilidade para resolução de problemas.
+- Home
 
-## Regras gerais
+  - Listara todos os produtos presentes no nosso servidor (JSONServer).
+  - No icone de carrinho no topo da tela representa quantos itens tem no carrinho.
+  - Clicando na logo da Hubee, volta pra pagina home(caso esteje em outra página)
 
-- O candidato terá o prazo de 7 dias para completar o desafio.
+- Carrinho
+  - Listara todos os seus produtos do carrinho, juntamente com a quantidade.
+  - Tendo a possibilidade de adicionar ou retirar a quantidade
+  - Podendo excluir algum produto não desejado 
 
-## Desafio
+## :art: O layout?
 
-O teste consiste em criar um fluxo de carrinho de compras simples, com catalogo de produtos para realizar um pedido.
+O projeto consiste em duas páginas, sendo a Home:
+[![Tela home.png](https://i.postimg.cc/RCDBb8Zk/tela-home.png)](https://postimg.cc/F138YTcp)
 
-Segue um esboço da ideia para facilitar a visualização do carrinho, mas fique a vontade para utilizar sua criatividade:
+[![home-mobile.png](https://i.postimg.cc/76JFvP6j/home-mobile.png)](https://postimg.cc/0MxWDs7C)
 
-![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_prot.png)
+e a página do carrinho
+[![carrinho-vazinho.png](https://i.postimg.cc/6600WJvP/carrinho-vazinho.png)](https://postimg.cc/CdRD72JC)
 
-Link para o protótipo no figma: [bit.ly/hbfront](http://bit.ly/hbfront)
+[![carrinho-com-produto-sem-cupom-de-desconto.png](https://i.postimg.cc/Hk7X7frd/carrinho-com-produto-sem-cupom-de-desconto.png)](https://postimg.cc/zy8Vs2wc)
 
-Segue os requisitos funcionais do desafio:
+[![carrinho-mobile.png](https://i.postimg.cc/bwQdP8GD/carrinho-mobile.png)](https://postimg.cc/21SCds7r)
 
-- O sistema deve buscar e exibir um catalogo de produtos;
-- O sistema deve adicionar o produto no carrinho;
-- O sistema deve permitir adicionar apenas um cupom de desconto válido no pedido (consumir na API para a verificação);
-- O sistema deve visualizar os itens do carrinho com as seguintes informações:
-  - Quantidade e preço do item
-  - Valor total do pedido
-  - Cupom aplicado e valor do desconto
-- O sistema deve excluir um item do carrinho;
-- O sistema deve alterar a quantidade do item do carrinho;
-- O sistema deve finalizar o pedido (registrando o pedido na API) e exibir uma mensagem de sucesso.
+[![carrinho-com-cupom-de-desconto.png](https://i.postimg.cc/QtjTwC0d/carrinho-com-cupom-de-desconto.png)](https://postimg.cc/gwBj6YCC)
 
-### JSON Server
+## :hammer: Ferramentas?
 
-Para realizar as integrações com o **back-end** disponibilizamos o arquivo **db.json** com as informações necessárias para realizar a integração.
-O arquivo está na pasta **json-server** na raiz do projeto.
+O projeto utiliza as seguintes ferramentas
 
-OBS: segue a [documentação do JSON server](https://github.com/typicode/json-server) para sua utilização
-
-## Tecnologias, frameworks e bibliotecas
-
-É obrigatório a utilização dos seguintes:
-
+- TypeScript
 - React
 - Redux
-- Typescript
-- Material-UI
-- styled-components
-  
-No mais, fique a vontade para utilizar outras ferramentas que desejar.
+- Redux-saga
+- Axios
+- JServer
+- Styled Components
+- MaterialUI
+- react-toastify
 
-## Diferenciais
+## :electric_plug: Como usar?
 
-- Componentes reutilizáveis
-- Layout responsivo (seja criativo!)
-- Boa documentação (como rodar o projeto, como foi organizado...);
-- Criar testes unitários automatizados para a aplicação (Jest, testing-library e etc...)
-- Ser capaz de lidar com os efeitos colaterais da aplicação sem bloquear as atualizações de estado (Redux - Middleware)
+É **necessário** que tenha instalado em sua máquina:
 
-## Pronto para começar o desafio?
+- Git
+- Node
+- Yarn ou npm
+- VSCode
 
-- Faça um **"fork"** desse repositório na sua conta do Github
-- Crie uma branch com o seu nome e sobrenome **ex: nome-sobrenome**
-- Após completar o desafio, crie um **"pull request"** nesse repositório comparando a sua branch com a master
-- Receberemos uma notificação do seu pull request, faremos a avaliação da sua solução e entraremos em contato.
+### :package: Obter a aplicação
 
-## FAQ
+Baixe o .zip do projeto ou faça o clone executando:
 
-- Posso usar o create-react-app para completar o desafio? **Sim, você pode usar qualquer cli para criar seu projeto**
-- Preciso necessariamente fazer um fork do projeto? **Sim, para que possamos saber quanto tempo você levou para executar o desafio**
-- Em caso de dúvidas, [abra uma issue](https://github.com/HubeePlatform/hubee-frontend-challenge/issues) ou envie um e-mail para **eng.hubee@gmail.com.**
+```bash
+$ git clone https://github.com/vinicius2616/hubee-frontend-challenge.git
+```
 
-### **Boa sorte.** 🚀
+### :steam_locomotive: Instalar dependências
+
+No diretório raiz da aplicação, abra o terminal e execute:
+
+```bash
+  # O comando irá instalar todas as dependências necessárias para o projeto execute
+  yarn
+```
+
+### :crystal_ball: Executar aplicação
+
+Após as dependências instaladas, execute:
+
+```bash
+  # Irá iniciar o server da aplicação
+  yarn server
+```
+
+```bash
+  # O comando irá executar o projeto em versão de desenvolvimento
+  yarn start
+```
+
+---
+
+<h4 align="center">
+Feito com 💜 por <a href="https://www.linkedin.com/in/vinicius-faleiros/" target="_blank">Vinicius Faleiros</a>
+</h4>
+
 
