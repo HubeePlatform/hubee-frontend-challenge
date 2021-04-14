@@ -1,25 +1,28 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
-    "jest": true
+    "es2021": true
   },
   "plugins": ["react", "import"],
   "extends": "airbnb",
   "rules": {
     "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [".js", ".jsx"]
-      }
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
+    "import/resolver": "off",
+    "import/no-unresolved": [2, { "caseSensitive": false }],
     "global-require": "off",
-    "import/prefer-default-export": "off",
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowTaggedTemplates": true
+    "react/react-in-jsx-scope": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    ]
+    }
   }
 }
