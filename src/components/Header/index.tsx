@@ -6,7 +6,7 @@ import logoImg from '../../assets/logo.svg';
 
 export function Header() {
   return (
-    <Container maxWidth="lg">
+    <Container>
       <img src={logoImg} alt="Hubee" />
 
       <Link href="/cart">

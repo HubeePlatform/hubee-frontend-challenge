@@ -1,12 +1,14 @@
-import { Header } from './components/Header/index';
+import { ThemeProvider } from '@material-ui/core';
+import { Home } from './pages/Home';
 import { GlobalStyle } from './styles/global';
+import { theme } from './styles/theme';
 
 function App() {
   return (
-    <>
-      <Header />
+    <ThemeProvider theme={theme}>
+      <Home />
       <GlobalStyle />
-    </>
+    </ThemeProvider>
   );
 }
 

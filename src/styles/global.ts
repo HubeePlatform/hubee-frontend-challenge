@@ -52,5 +52,9 @@ export const GlobalStyle = createGlobalStyle`
   [disabled] {
     cursor: not-allowed;
   }
+
+  li {
+    list-style: none;
+  }
   
 `;

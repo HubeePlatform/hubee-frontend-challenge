@@ -1,8 +1,9 @@
-import { Container as ContainerMaterial } from '@material-ui/core';
 import styled from 'styled-components';
 
-export const Container = styled(ContainerMaterial)`
-  margin-top: 2rem;
+export const Container = styled.header`
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  max-width: 1224px;
 
   display: flex;
   align-items: flex-end;
