@@ -11,6 +11,7 @@ export const Container = styled.header`
   
   img {
     max-height: 100px;
+    cursor: pointer;
   }
   
   a {

@@ -1,12 +1,12 @@
 import { ThemeProvider } from '@material-ui/core';
-import { Home } from './pages/Home';
+import { Router } from './routes';
 import { GlobalStyle } from './styles/global';
 import { theme } from './styles/theme';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Router />
       <GlobalStyle />
     </ThemeProvider>
   );
