@@ -1,5 +1,5 @@
-import { Reducer } from 'redux';
 import produce from 'immer';
+import { Reducer } from 'redux';
 import { ICartState } from './type';
 
 const INITIAL_STATE: ICartState = {
@@ -24,6 +24,18 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
       }
 
       draft.totalPrice += product.price;
+
+      return draft;
+    }
+
+    case 'REMOVE_PRODUCT_TO_CART': {
+      const { productId, price } = action.payload;
+
+      const productInCartIndex = draft.items.filter((item) => item.productId !== productId);
+
+      draft.totalPrice -= price;
+
+      draft.items = productInCartIndex;
 
       return draft;
     }
