@@ -23,6 +23,8 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
         });
       }
 
+      draft.totalPrice += product.price;
+
       return draft;
     }
 

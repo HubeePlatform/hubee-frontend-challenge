@@ -18,7 +18,7 @@ export function CardProduct({ product }: CardProductProps) {
 
   return (
     <Container>
-      <img src={product.url} alt="produto" />
+      <img src={product.url} alt={product.name.toLocaleLowerCase()} />
       <div>
         <h4>{product.name.toLocaleLowerCase()}</h4>
         <p>
