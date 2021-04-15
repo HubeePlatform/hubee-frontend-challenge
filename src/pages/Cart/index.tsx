@@ -1,10 +1,17 @@
 import { Button, TextField } from '@material-ui/core';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { Header } from '../../components/Header';
 import { api } from '../../services/api';
 import { IState } from '../../store';
-import { ICartItem, ICartState, IProduct } from '../../store/modules/cart/type';
+import { addCouponToCart } from '../../store/modules/cart/actions';
+import {
+  ICartItem,
+  ICartState,
+  ICoupon,
+  IProduct,
+} from '../../store/modules/cart/type';
 import { CardProduct } from './components/CardProduct';
 import { ActionsCart, Container, Summary } from './styled';
 
@@ -14,8 +21,16 @@ interface IProductInCart {
 }
 
 export function Cart() {
-  const [products, setProducts] = useState<IProductInCart[]>([]);
+  const dispatch = useDispatch();
   const cart = useSelector<IState, ICartState>((state) => state.cart);
+
+  const [couponKey, setCouponKey] = useState('');
+  const [coupon, setCoupon] = useState<ICoupon>({} as ICoupon);
+  const [products, setProducts] = useState<IProductInCart[]>([]);
+
+  const percentageCoupon = coupon?.rebatePercentage / 100 || 0;
+
+  const priceOffByCoupon = cart.totalPrice * percentageCoupon;
 
   useEffect(() => {
     api.get('products').then((response) => {
@@ -38,6 +53,38 @@ export function Cart() {
     });
   }, [cart]);
 
+  useEffect(() => {
+    api.get<ICoupon[]>('coupons').then((response) => {
+      const couponToResponse = response.data.find(
+        (c) => c.key === cart.coupon,
+      ) as ICoupon;
+
+      setCoupon(couponToResponse);
+    });
+  }, []);
+
+  const handleAddCouponToCartRequest = () => {
+    api.get<ICoupon[]>('coupons').then((response) => {
+      const couponToResponse = response.data.find(
+        (c) => c.key === couponKey,
+      ) as ICoupon;
+
+      if (!couponToResponse.key) {
+        toast.error('Cupom inválido, tente outro');
+        return;
+      }
+
+      if (!couponToResponse.isActive) {
+        toast.error('Cupom foi desativado, tente outro');
+        return;
+      }
+
+      dispatch(addCouponToCart(couponToResponse));
+
+      setCoupon(couponToResponse);
+    });
+  };
+
   return (
     <>
       <Header />
@@ -53,6 +100,18 @@ export function Cart() {
           ))}
         </ul>
         <Summary>
+          <div>
+            <TextField
+              label="cupom de desconto..."
+              onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                setCouponKey(e.target.value);
+              }}
+            />
+            <Button onClick={handleAddCouponToCartRequest}>
+              aplicar cupom
+            </Button>
+          </div>
+
           <p>
             <small>subtotal</small>
             {new Intl.NumberFormat('pt-BR', {
@@ -60,21 +119,32 @@ export function Cart() {
               style: 'currency',
             }).format(cart.totalPrice)}
           </p>
-          <p>
-            <small>cupom “hubee” aplicado</small>
-            -R$ 17,98
-          </p>
+
+          {!!cart.coupon && (
+            <p>
+              <small>
+                cupom
+                {' "'}
+                {cart.coupon}
+                {'" '}
+                aplicado
+              </small>
+              {new Intl.NumberFormat('pt-BR', {
+                currency: 'BRL',
+                style: 'currency',
+              }).format(-priceOffByCoupon)}
+            </p>
+          )}
 
           <p className="total">
             <small>total</small>
             {new Intl.NumberFormat('pt-BR', {
               currency: 'BRL',
               style: 'currency',
-            }).format(cart.totalPrice)}
+            }).format(cart.totalPrice - priceOffByCoupon)}
           </p>
         </Summary>
         <ActionsCart>
-          <TextField label="cupom de desconto..." />
           <Button>finalizar pedido</Button>
         </ActionsCart>
       </Container>

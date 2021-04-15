@@ -5,6 +5,12 @@ export interface IProduct {
   url: string;
 }
 
+export interface ICoupon {
+  key: string;
+  isActive: boolean;
+  rebatePercentage: number;
+}
+
 export interface ICartItem {
   productId: number;
   amount: number;

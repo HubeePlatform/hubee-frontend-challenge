@@ -1,12 +1,13 @@
 import { AxiosResponse } from 'axios';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { api } from '../../../services/api';
-import { deleteProductToCart, deleteProductToCartRequest, removeProductToCart } from './actions';
+import { deleteProductToCart, deleteProductToCartRequest, removeProductToCart, removeProductToCartRequest } from './actions';
 import { IProduct } from './type';
 
-type CheckProductStockRequest = ReturnType<typeof deleteProductToCartRequest>;
+type DeleteProductToCartRequest = ReturnType<typeof deleteProductToCartRequest>;
+type RemoveProductToCartRequest = ReturnType<typeof removeProductToCartRequest>;
 
-function* getPriceProductToDelete({ payload }: CheckProductStockRequest) {
+function* getPriceProductToDelete({ payload }: DeleteProductToCartRequest) {
   const { productId } = payload;
 
   const productResponseResponse: AxiosResponse<IProduct> = yield call(api.get, `products/${productId}`);
@@ -14,7 +15,7 @@ function* getPriceProductToDelete({ payload }: CheckProductStockRequest) {
   yield put(deleteProductToCart(productId, productResponseResponse.data.price));
 }
 
-function* getPriceProductToRemove({ payload }: CheckProductStockRequest) {
+function* getPriceProductToRemove({ payload }: RemoveProductToCartRequest) {
   const { productId } = payload;
 
   const productResponseResponse: AxiosResponse<IProduct> = yield call(api.get, `products/${productId}`);

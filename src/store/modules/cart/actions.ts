@@ -1,4 +1,4 @@
-import { IProduct } from './type';
+import { ICoupon, IProduct } from './type';
 
 export function addProductToCart(product: IProduct) {
   return {
@@ -43,6 +43,24 @@ export function removeProductToCart(productId: number, price: number) {
     payload: {
       productId,
       price,
+    },
+  };
+}
+
+export function addCouponToCartRequest(couponKey: string) {
+  return {
+    type: 'ADD_COUPON_TO_CART_REQUEST',
+    payload: {
+      couponKey,
+    },
+  };
+}
+
+export function addCouponToCart(coupon: ICoupon) {
+  return {
+    type: 'ADD_COUPON_TO_CART',
+    payload: {
+      coupon,
     },
   };
 }

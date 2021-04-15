@@ -1,4 +1,5 @@
 import produce from 'immer';
+import { toast } from 'react-toastify';
 import { Reducer } from 'redux';
 import { ICartState } from './type';
 
@@ -25,6 +26,8 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
 
       draft.totalPrice += product.price;
 
+      toast.success('Produto adicionado ao carrinho');
+
       return draft;
     }
 
@@ -41,10 +44,8 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
 
       draft.items = newListProducts;
 
-      return draft;
-    }
+      toast.success('Produto deletado do carrinho');
 
-    default: {
       return draft;
     }
 
@@ -59,8 +60,24 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
         draft.items = draft.items.filter((item) => item.productId !== productId);
       }
 
+      toast.success('Nova quantidade do produto');
+
       draft.totalPrice -= price;
 
+      return draft;
+    }
+
+    case 'ADD_COUPON_TO_CART': {
+      const { coupon } = action.payload;
+
+      draft.coupon = coupon.key;
+
+      toast.success(`Cupom ${coupon.key} aplicado com sucesso`);
+
+      return draft;
+    }
+
+    default: {
       return draft;
     }
   }

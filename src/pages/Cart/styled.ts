@@ -24,6 +24,20 @@ export const Summary = styled.div`
   flex-direction: column;
   align-items: flex-end;
 
+  > div {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 2.4rem;
+
+    button {
+      width: auto;
+      padding-left: 3.6rem; 
+      padding-right: 3.6rem;
+      margin-left: 1.2rem;
+    }
+  }
+
   p {
     width: 50%;
     margin-top: 1.25rem;
@@ -46,14 +60,12 @@ export const Summary = styled.div`
       border-top: 2px solid var(--gray-300);
     }
   }
+
+  
 `;
 
 export const ActionsCart = styled.div`
-  width: 75%;
+  width: 50%;
   margin-left: auto;
   margin-top: 5rem;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3rem;
 `;
