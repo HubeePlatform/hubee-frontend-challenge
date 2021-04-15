@@ -1,0 +1,30 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["react", "import"],
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "import/resolver": "off",
+    "import/no-unresolved": [2, { "caseSensitive": false }],
+    "global-require": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": 0,
+    "object-curly-newline": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
