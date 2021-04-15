@@ -1,22 +1,37 @@
 import { Button } from '@material-ui/core';
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../../../../store/modules/cart/actions';
+import { IProduct } from '../../../../store/modules/cart/type';
 import { Container } from './styled';
 
-export function CardProduct() {
+interface CardProductProps {
+  product: IProduct;
+}
+
+export function CardProduct({ product }: CardProductProps) {
+  const dispatch = useDispatch();
+
+  const handleAddProductToCart = useCallback(() => {
+    dispatch(addProductToCart(product));
+  }, [dispatch, product]);
+
   return (
     <Container>
-      <img
-        src="https://images.unsplash.com/photo-1605086998852-18371cfd9b2e?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-        alt="produto"
-      />
+      <img src={product.url} alt="produto" />
       <div>
-        <h4>camiseta básica verde verdona</h4>
-        <small>temos no tamanho de todas as pessoas e animais</small>
+        <h4>{product.name.toLocaleLowerCase()}</h4>
         <p>
-          R$ 28,99
+          {new Intl.NumberFormat('pt-BR', {
+            currency: 'BRL',
+            style: 'currency',
+          }).format(product.price)}
           <span>por unidade</span>
         </p>
       </div>
-      <Button color="primary">adicionar ao carrinho</Button>
+      <Button color="primary" onClick={handleAddProductToCart}>
+        adicionar ao carrinho
+      </Button>
     </Container>
   );
 }

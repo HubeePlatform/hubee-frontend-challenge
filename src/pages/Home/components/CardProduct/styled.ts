@@ -19,15 +19,9 @@ export const Container = styled.li`
     grid-gap: 1rem;
 
     h4 {
-      font-weight: 600;
-      font-size: 1.5rem;
+      font-weight: 500;
+      font-size: 1.25rem;
       color: var(--gray-100);
-    }
-
-    small {
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--gray-300);
     }
 
     p {

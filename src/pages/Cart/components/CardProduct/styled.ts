@@ -51,12 +51,10 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   height: 3rem;
-  width: 11rem;
+  width: 13rem;
 
   button {
     margin: -2px;
-    width: 3.25rem;
-    min-width: 3.25rem;
   }
 
   span {

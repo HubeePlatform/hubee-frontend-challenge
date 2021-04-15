@@ -16,7 +16,8 @@
     "global-require": "off",
     "react/react-in-jsx-scope": "off",
     "import/extensions": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "no-param-reassign": 0
   },
   "settings": {
     "import/resolver": {
