@@ -18,15 +18,7 @@
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "no-param-reassign": 0,
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": "always",
-        "ObjectPattern": { "multiline": true },
-        "ImportDeclaration": "never",
-        "ExportDeclaration": { "multiline": true, "minProperties": 4 }
-      }
-    ]
+    "object-curly-newline": "off"
   },
   "settings": {
     "import/resolver": {

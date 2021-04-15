@@ -28,19 +28,39 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
       return draft;
     }
 
-    case 'REMOVE_PRODUCT_TO_CART': {
+    case 'DELETE_PRODUCT_TO_CART': {
       const { productId, price } = action.payload;
 
-      const productInCartIndex = draft.items.filter((item) => item.productId !== productId);
+      const newListProducts = draft.items.filter((item) => item.productId !== productId);
 
-      draft.totalPrice -= price;
+      const amountProduct = draft.items.find(
+        (item) => item.productId === productId,
+      )?.amount ?? 1;
 
-      draft.items = productInCartIndex;
+      draft.totalPrice -= price * amountProduct;
+
+      draft.items = newListProducts;
 
       return draft;
     }
 
     default: {
+      return draft;
+    }
+
+    case 'REMOVE_PRODUCT_TO_CART': {
+      const { productId, price } = action.payload;
+
+      const productInCartIndex = draft.items.findIndex((item) => item.productId === productId);
+
+      if (draft.items[productInCartIndex].amount > 1) {
+        draft.items[productInCartIndex].amount -= 1;
+      } else {
+        draft.items = draft.items.filter((item) => item.productId !== productId);
+      }
+
+      draft.totalPrice -= price;
+
       return draft;
     }
   }

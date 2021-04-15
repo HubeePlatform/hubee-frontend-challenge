@@ -9,6 +9,25 @@ export function addProductToCart(product: IProduct) {
   };
 }
 
+export function deleteProductToCartRequest(productId: number) {
+  return {
+    type: 'DELETE_PRODUCT_TO_CART_REQUEST',
+    payload: {
+      productId,
+    },
+  };
+}
+
+export function deleteProductToCart(productId: number, price: number) {
+  return {
+    type: 'DELETE_PRODUCT_TO_CART',
+    payload: {
+      productId,
+      price,
+    },
+  };
+}
+
 export function removeProductToCartRequest(productId: number) {
   return {
     type: 'REMOVE_PRODUCT_TO_CART_REQUEST',
