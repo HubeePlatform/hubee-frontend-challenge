@@ -4,6 +4,9 @@ export const Container = styled.li`
   border: 2px solid var(--gray-100);
   background: var(--gray-800);
 
+  display: flex;
+  flex-direction: column;
+
   img {
     width: 100%;
     height: 100%;
@@ -22,12 +25,17 @@ export const Container = styled.li`
       font-weight: 500;
       font-size: 1.25rem;
       color: var(--gray-100);
+
     }
 
     p {
       font-weight: 600;
       font-size: 2rem;
       color: var(--gray-100);
+
+      @media(max-width: 700px) {
+        font-size: 1.5rem;
+      }
 
       span {
         padding-left: .5rem;

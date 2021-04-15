@@ -36,6 +36,15 @@ export const Summary = styled.div`
       padding-right: 3.6rem;
       margin-left: 1.2rem;
     }
+    
+    @media(max-width: 900px) {
+      flex-direction: column;
+
+      button {
+        margin-left: 0;
+        margin-top: .5rem;
+      }
+    }
   }
 
   p {
@@ -45,6 +54,10 @@ export const Summary = styled.div`
     font-size: 2rem;
     font-weight: 500;
     text-align: right;
+
+    @media(max-width: 900px) {
+      width: 100%;
+    }
 
     small {
       padding-right: 1rem; 
@@ -68,4 +81,8 @@ export const ActionsCart = styled.div`
   width: 50%;
   margin-left: auto;
   margin-top: 5rem;
+
+  @media(max-width: 900px) {
+    width: 100%;
+  }
 `;

@@ -89,6 +89,28 @@
         }
       ],
       "totalPrice": 10.7
+    },
+    {
+      "items": [
+        {
+          "productId": 2,
+          "amount": 1
+        }
+      ],
+      "totalPrice": 2579.19008,
+      "coupon": "hubee",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "productId": 2,
+          "amount": 2
+        }
+      ],
+      "totalPrice": "4419.98",
+      "coupon": "hubee++",
+      "id": 3
     }
   ],
   "orders": [
@@ -96,6 +118,11 @@
       "id": 1,
       "cartId": 1,
       "finalized": true
+    },
+    {
+      "cartId": 3,
+      "finalized": true,
+      "id": 2
     }
   ]
 }

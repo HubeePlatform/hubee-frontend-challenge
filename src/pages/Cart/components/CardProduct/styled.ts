@@ -9,8 +9,13 @@ export const Container = styled.li`
   background: var(--gray-800);
   margin-bottom: 1.5rem;
 
+  @media(max-width: 900px) {
+    flex-direction: column;
+  }
+
   > button {
     position: absolute;
+    background: var(--gray-800);
     top: -2px;
     right: -2px;
 
@@ -22,6 +27,11 @@ export const Container = styled.li`
     max-width: 180px;
     width: 180px;
     object-fit: cover;
+
+    @media(max-width: 900px) {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   p {
@@ -32,6 +42,10 @@ export const Container = styled.li`
 
     padding: 1rem;
     width: 475px;
+      
+    @media(max-width: 900px) {
+      width: 100%;
+    }
   }    
 `;
 
@@ -44,6 +58,11 @@ export const ButtonGroup = styled.div`
   justify-content: space-between;
   height: 3rem;
   width: 13rem;
+ 
+  @media(max-width: 900px) {
+    margin: auto;
+    margin-top: 1rem;
+  }
 
   button {
     margin: -2px;
@@ -73,6 +92,11 @@ export const Subtotal = styled.div`
   color: var(--gray-100);
   font-size: 2rem;
   font-weight: 500;
+
+  @media(max-width: 900px) {
+    margin-left: auto;
+    padding-top: 2.5rem;
+  }
 
   small {
     display: flex;

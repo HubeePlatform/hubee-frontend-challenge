@@ -64,3 +64,10 @@ export function addCouponToCart(coupon: ICoupon) {
     },
   };
 }
+
+export function clearCart() {
+  return {
+    type: 'CLEAR_CART',
+    payload: {},
+  };
+}

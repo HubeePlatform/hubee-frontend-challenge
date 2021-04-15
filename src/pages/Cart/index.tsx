@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { Header } from '../../components/Header';
 import { api } from '../../services/api';
 import { IState } from '../../store';
-import { addCouponToCart } from '../../store/modules/cart/actions';
+import { addCouponToCart, clearCart } from '../../store/modules/cart/actions';
 import {
   ICartItem,
   ICartState,
@@ -29,7 +29,6 @@ export function Cart() {
   const [products, setProducts] = useState<IProductInCart[]>([]);
 
   const percentageCoupon = coupon?.rebatePercentage / 100 || 0;
-
   const priceOffByCoupon = cart.totalPrice * percentageCoupon;
 
   useEffect(() => {
@@ -82,6 +81,32 @@ export function Cart() {
       dispatch(addCouponToCart(couponToResponse));
 
       setCoupon(couponToResponse);
+    });
+  };
+
+  const handleFinishedBuy = () => {
+    if (cart.items.length <= 0) {
+      toast.error('Insira um produto no carrinho para finalizar o pedido');
+      return;
+    }
+
+    const cartToBody = {
+      ...cart,
+      totalPrice: (cart.totalPrice - priceOffByCoupon).toFixed(2),
+    };
+
+    api.post('carts', cartToBody).then((response) => {
+      const cartId = response.data.id;
+
+      api
+        .post('orders', {
+          cartId,
+          finalized: true,
+        })
+        .then(() => {
+          toast.success('Pedido realizado com sucesso!');
+          dispatch(clearCart());
+        });
     });
   };
 
@@ -145,7 +170,7 @@ export function Cart() {
           </p>
         </Summary>
         <ActionsCart>
-          <Button>finalizar pedido</Button>
+          <Button onClick={handleFinishedBuy}>finalizar pedido</Button>
         </ActionsCart>
       </Container>
     </>

@@ -77,6 +77,10 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => produce(sta
       return draft;
     }
 
+    case 'CLEAR_CART': {
+      return INITIAL_STATE;
+    }
+
     default: {
       return draft;
     }
