@@ -252,6 +252,22 @@
         "rehydrated": true
       },
       "id": 6
+    },
+    {
+      "products": [
+        {
+          "id": 1,
+          "name": "Camera fotografica",
+          "price": 1000.5,
+          "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+          "quantity": 5
+        }
+      ],
+      "_persist": {
+        "version": -1,
+        "rehydrated": true
+      },
+      "id": 7
     }
   ],
   "orders": [
@@ -389,6 +405,22 @@
         "rehydrated": true
       },
       "id": 5
+    },
+    {
+      "products": [
+        {
+          "id": 1,
+          "name": "Camera fotografica",
+          "price": 1000.5,
+          "url": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+          "quantity": 5
+        }
+      ],
+      "_persist": {
+        "version": -1,
+        "rehydrated": true
+      },
+      "id": 6
     }
   ]
 }
