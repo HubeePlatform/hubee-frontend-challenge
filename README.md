@@ -1,84 +1,85 @@
-# Hubee Frontend Challenge
+<h1 align="center">BRSHOPS - LOJA VIRTUAL</h1>
 
-![N|Solid](https://media-exp1.licdn.com/dms/image/C4E0BAQHOp41isf2byw/company-logo_200_200/0/1603390307024?e=1625097600&v=beta&t=BjntmL7iePrkYJ7Ci5xqlyHh53Qn_FyUICHyLtDYegg)
+## :rocket: Como funciona?
 
-O desenvolvedor front-end é o profissional que será responsável pelo desenvolvimento e manutenção do ecossistema das aplicações do time Hubee. Este desafio avaliará diversos aspectos do candidato, tornando-se então a entrega deste obrigatória para conclusão do processo.
+O sistema consiste em uma Loja Eletronica, com um carrinho de compras para armazenamento e finalização do pedido.
 
-Caso não consiga entregar dentro do prazo ou completá-lo por algum motivo, favor nos reportar. O objetivo desse desafio é demonstrar sua experiência e conhecimento como desenvolvedor, assim saberemos como você pensa e resolve os problemas do cotidiano.
+## :art: Nele você pode:
 
-O processo de avaliação levará em consideração os seguintes pontos:
+- Nos produtos
+  - Adicionar um ou mais produtos ao carrinho.
+  - Efetuar a compra de um produto, sendo redirecionado direto para a tela de confirmação, que consiste na mesma tela do carrinho.
+  - Caso ocorra do cliente querer adicionar um produto já existente no carrinho, ele será notificado e redirecionado ao carrinho para conferir se foi um engano ou se quer realmente aumentar a quantidade do item escolhido.
 
-- Organização e clareza;
-- Lógica de programação;
-- Boas práticas;
-- Habilidade para resolução de problemas.
+- No carrinho   
+  - Aumentar a quantidade de itens no carrinho
+  - Remover um item do carrinho 
+  - Visualizar valor total do pedido 
+  - Aplicar um Cupom de desconto, onde todos os calculos de descontos são elaborados
+  - Visualizar valor total do pedido com desconto aplicado
+  - Finalizar o pedido, assim concluindo o processo de compra.  
 
-## Regras gerais
+## :hammer: Ferramentas Utilizadas?
 
-- O candidato terá o prazo de 7 dias para completar o desafio.
+Foi utilizada as seguintes ferramentas no processo de desenvolvimento do sistema
 
-## Desafio
+- [Next.js][url-next]
+  - [React.js][] 
+  - [TypeScript][url-ts]
+- [Styled-components][url-styled]
+- [Material UI][url-mui]
+- [Redux][url-redux]
 
-O teste consiste em criar um fluxo de carrinho de compras simples, com catalogo de produtos para realizar um pedido.
 
-Segue um esboço da ideia para facilitar a visualização do carrinho, mas fique a vontade para utilizar sua criatividade:
+## :electric_plug: Como usar?
 
-![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_prot.png)
+É **necessário** que tenha instalado em sua máquina:
 
-Link para o protótipo no figma: [bit.ly/hbfront](http://bit.ly/hbfront)
+- [Git][url-git]
+- [Node][url-node]
+- [Yarn][url-yarn] ou [npm][url-npm]
 
-Segue os requisitos funcionais do desafio:
+### :package: Obter a aplicação
 
-- O sistema deve buscar e exibir um catalogo de produtos;
-- O sistema deve adicionar o produto no carrinho;
-- O sistema deve permitir adicionar apenas um cupom de desconto válido no pedido (consumir na API para a verificação);
-- O sistema deve visualizar os itens do carrinho com as seguintes informações:
-  - Quantidade e preço do item
-  - Valor total do pedido
-  - Cupom aplicado e valor do desconto
-- O sistema deve excluir um item do carrinho;
-- O sistema deve alterar a quantidade do item do carrinho;
-- O sistema deve finalizar o pedido (registrando o pedido na API) e exibir uma mensagem de sucesso.
+Faça o clone do projeto executando:
 
-### JSON Server
+```bash
 
-Para realizar as integrações com o **back-end** disponibilizamos o arquivo **db.json** com as informações necessárias para realizar a integração.
-O arquivo está na pasta **json-server** na raiz do projeto.
+```
 
-OBS: segue a [documentação do JSON server](https://github.com/typicode/json-server) para sua utilização
+### :steam_locomotive: Instalar dependências
 
-## Tecnologias, frameworks e bibliotecas
+No diretório raiz da aplicação, abra o terminal e execute:
 
-É obrigatório a utilização dos seguintes:
+```bash
+  # caso esteja usando yarn
+  yarn
+```
 
-- React
-- Redux
-- Typescript
-- Material-UI
-- styled-components
-  
-No mais, fique a vontade para utilizar outras ferramentas que desejar.
+### :crystal_ball: Executar aplicação
 
-## Diferenciais
+Após as dependências instaladas, execute:
 
-- Componentes reutilizáveis
-- Layout responsivo (seja criativo!)
-- Boa documentação (como rodar o projeto, como foi organizado...);
-- Criar testes unitários automatizados para a aplicação (Jest, testing-library e etc...)
-- Ser capaz de lidar com os efeitos colaterais da aplicação sem bloquear as atualizações de estado (Redux - Middleware)
+```bash
+  # para executar o back-end dá aplicação
+  yarn server
+```
 
-## Pronto para começar o desafio?
+```bash
+  # para executar o front-end dá aplicação
+  yarn dev
+```
 
-- Faça um **"fork"** desse repositório na sua conta do Github
-- Crie uma branch com o seu nome e sobrenome **ex: nome-sobrenome**
-- Após completar o desafio, crie um **"pull request"** nesse repositório comparando a sua branch com a master
-- Receberemos uma notificação do seu pull request, faremos a avaliação da sua solução e entraremos em contato.
+<h4 align="center">
+Desenvolvido por <a href="https://github.com/rodovicks" target="_blank">Bruno Rodovicks</a>
+</h4>
 
-## FAQ
+[url-ts]: https://www.typescriptlang.org/
+[url-styled]: https://styled-components.com/docs
+[url-mui]: https://material-ui.com
+[url-node]: https://nodejs.org/
+[url-react]: https://reactjs.org/
+[url-redux]: https://redux.js.org
+[url-next]: https://nextjs.org/
 
-- Posso usar o create-react-app para completar o desafio? **Sim, você pode usar qualquer cli para criar seu projeto**
-- Preciso necessariamente fazer um fork do projeto? **Sim, para que possamos saber quanto tempo você levou para executar o desafio**
-- Em caso de dúvidas, [abra uma issue](https://github.com/HubeePlatform/hubee-frontend-challenge/issues) ou envie um e-mail para **eng.hubee@gmail.com.**
-
-### **Boa sorte.** 🚀
 
