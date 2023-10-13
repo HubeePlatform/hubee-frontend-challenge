@@ -6,4 +6,10 @@ export const AppContainer = styled.div`
   padding: 20px;
   grid-gap: 50px;
   height: 92vh;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    padding: 0px;
+    height: 95vh;
+  }
 `;
