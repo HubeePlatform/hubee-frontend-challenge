@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useProducts from "./hooks/useProducts";
 import { AppContainer } from "./style";
 import { ProductList } from "./components/productList";
+import { Order } from "./components/order";
 
 function App() {
   const { handleFetchProducts, products } = useProducts();
@@ -13,7 +14,7 @@ function App() {
   return (
     <AppContainer>
       <ProductList products={products} />
-      <div>Carrinho de compras</div>
+      <Order />
     </AppContainer>
   );
 }

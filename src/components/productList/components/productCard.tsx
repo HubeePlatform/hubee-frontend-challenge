@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   Card,
@@ -15,6 +16,7 @@ interface Props {
 }
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
+  const [qtd, setQtd] = useState(1);
   return (
     <Card style={{ minHeight: "370px" }}>
       <CardMedia
@@ -29,9 +31,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           <Typography fontWeight={"bold"}>
             {formatToMoney(product.price)}
           </Typography>
-          <QtdButtons />
+          <QtdButtons handleSetCount={setQtd} />
         </ProductDescribe>
-        <Button variant="contained" fullWidth>
+        <Button variant="contained" fullWidth disabled={qtd < 1}>
           Comprar
         </Button>
       </CardContent>
