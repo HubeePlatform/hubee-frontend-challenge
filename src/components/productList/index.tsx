@@ -9,9 +9,10 @@ interface Props {
 export const ProductList: React.FC<Props> = ({ products }) => {
   return (
     <ProductListContainer>
-      {products.map((product: Products) => (
-        <ProductCard product={product} />
-      ))}
+      {products.length > 0 &&
+        products.map((product: Products) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
     </ProductListContainer>
   );
 };
