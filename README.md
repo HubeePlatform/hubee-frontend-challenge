@@ -1,6 +1,15 @@
 # Hubee Frontend Challenge
 
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![styled](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+> Status: Finished :white_check_mark:
+
 O desafio consiste em criar um fluxo de carrinho de compras simples, com catálogo de produtos para realizar um pedido.
+[Acesse o desafio](https://github.com/HubeePlatform/hubee-frontend-challenge)
+
 
 ![N|Solid](https://hubee-static.s3.sa-east-1.amazonaws.com/public-images/hubee_challenge_frontend_prot.png)
 
