@@ -81,70 +81,11 @@
   "carts": [
     {
       "id": 1,
-      "coupon": false,
-      "opened": false,
-      "items": [
-        {
-          "productId": 2,
-          "amount": 1
-        },
-        {
-          "productId": 9,
-          "amount": 1
-        }
-      ],
-      "totalPrice": 102042.40000000001
-    },
-    {
-      "id": 2,
-      "coupon": "hubee",
-      "opened": false,
-      "items": [
-        {
-          "productId": 1,
-          "amount": 1
-        },
-        {
-          "productId": 10,
-          "amount": 2
-        },
-        {
-          "productId": 9,
-          "amount": 1
-        }
-      ],
-      "totalPrice": 101844.89
-    },
-    {
-      "id": 3,
-      "coupon": false,
-      "opened": false,
-      "items": [
-        {
-          "productId": 3,
-          "amount": 1
-        }
-      ],
-      "totalPrice": 699
-    },
-    {
-      "id": 4,
-      "coupon": "hubee",
       "opened": true,
-      "items": [
-        {
-          "productId": 2,
-          "amount": 1
-        }
-      ],
-      "totalPrice": 2599.99
+      "items": [],
+      "totalPrice": 0,
+      "coupon": ""
     }
   ],
-  "orders": [
-    {
-      "id": 1,
-      "cartId": 1,
-      "finalized": true
-    }
-  ]
+  "orders": []
 }

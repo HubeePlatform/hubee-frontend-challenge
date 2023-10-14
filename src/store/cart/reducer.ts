@@ -1,9 +1,17 @@
 import { AnyAction } from "redux";
-import { SET_CART, SET_COUPON } from "./types";
+import {
+  OPEN_CART,
+  RESTART_CART,
+  SET_CART,
+  SET_COUPON,
+  SET_MODAL,
+} from "./types";
 
 const initialState = {
   cart: false,
   coupon: false,
+  modal: false,
+  openCart: false,
 };
 
 export const cartReducer = (state = initialState, action: AnyAction) => {
@@ -17,6 +25,22 @@ export const cartReducer = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         coupon: action.payload,
+      };
+    case SET_MODAL:
+      return {
+        ...state,
+        modal: !state.modal,
+      };
+    case RESTART_CART:
+      return {
+        ...state,
+        cart: [],
+        coupon: false,
+      };
+    case OPEN_CART:
+      return {
+        ...state,
+        openCart: !state.openCart,
       };
     default:
       return state;

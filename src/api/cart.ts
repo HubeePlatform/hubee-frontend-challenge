@@ -12,3 +12,13 @@ export const updateCart = (updatedData: any) =>
     },
     body: JSON.stringify(updatedData),
   });
+
+export const newCart = (cart: any) => {
+  fetch(`http://localhost:3000/carts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cart),
+  });
+};

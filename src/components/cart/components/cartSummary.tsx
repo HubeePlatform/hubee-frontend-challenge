@@ -1,7 +1,10 @@
 import { Typography } from "@mui/material";
 import { Coupon } from "../../../utils/interfaces";
 import { InformationValues } from "./style";
-import { formatToMoney } from "../../../utils/functions/utils";
+import {
+  calcRebatePercentage,
+  formatToMoney,
+} from "../../../utils/functions/utils";
 
 interface Props {
   totalPrice: number;
@@ -14,7 +17,7 @@ export const CartSummary: React.FC<Props> = ({ coupon, totalPrice }) => {
       <InformationValues>
         <Typography>Subtotal</Typography>
         <Typography align="right" fontWeight={"bold"} fontSize={"24px"}>
-          {totalPrice && formatToMoney(totalPrice)}
+          {formatToMoney(totalPrice)}
         </Typography>
       </InformationValues>
       {coupon && (
@@ -33,8 +36,7 @@ export const CartSummary: React.FC<Props> = ({ coupon, totalPrice }) => {
       <InformationValues>
         <Typography>Total</Typography>
         <Typography align="right" fontWeight={"bold"} fontSize={"24px"}>
-          {totalPrice &&
-            formatToMoney(totalPrice - (coupon.rebatePercentage || 0))}
+          {formatToMoney(totalPrice - (coupon.rebatePercentage || 0))}
         </Typography>
       </InformationValues>
     </>

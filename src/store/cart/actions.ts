@@ -1,5 +1,11 @@
 import { Cart, Coupon } from "../../utils/interfaces";
-import { SET_CART, SET_COUPON } from "./types";
+import {
+  OPEN_CART,
+  RESTART_CART,
+  SET_CART,
+  SET_COUPON,
+  SET_MODAL,
+} from "./types";
 
 export const setCart = (cart: Cart) => ({
   type: SET_CART,
@@ -9,4 +15,16 @@ export const setCart = (cart: Cart) => ({
 export const setCoupon = (coupon: Coupon) => ({
   type: SET_COUPON,
   payload: coupon,
+});
+
+export const setModal = () => ({
+  type: SET_MODAL,
+});
+
+export const restartCart = () => ({
+  type: RESTART_CART,
+});
+
+export const openCart = () => ({
+  type: OPEN_CART,
 });

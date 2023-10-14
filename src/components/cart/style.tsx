@@ -10,7 +10,7 @@ export const CartOrder = styled.div`
 export const CartOrderContent = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
-  height: 92vh;
+  height: 85vh;
 `;
 export const CartOrderMobile = styled.div`
   display: none;

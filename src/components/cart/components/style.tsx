@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Order = styled.div`
   margin-bottom: 30px;
+  height: 120px;
   overflow-y: auto;
 `;
 
