@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { Card, CardContent } from "@mui/material";
-import { CartOrder, CartOrderMobile } from "./style";
+import { Button, Card, CardContent } from "@mui/material";
+import { CartOrder, CartOrderContent, CartOrderMobile } from "./style";
 import { useCart } from "../../hooks/useCart";
-import { CartHeader } from "./components";
+import { CartHeader, CartSummary, CouponForm } from "./components";
 
 export const Cart: React.FC = () => {
-  const { cart, handleFetchCart } = useCart();
+  const { cart, coupon, handleFetchCart, handleSetCouponToCart } = useCart();
 
   const hasItems = cart?.items?.length > 0;
   const isCartEmpty = !hasItems;
@@ -15,12 +15,23 @@ export const Cart: React.FC = () => {
   }, []);
   return (
     <Card>
-      <CardContent>
+      <CardContent style={{ height: "100%", overflow: "auto" }}>
         <CartOrder>
           {hasItems && (
-            <>
+            <CartOrderContent>
               <CartHeader items={cart.items} />
-            </>
+              <div>
+                <CouponForm handleSetCoupon={handleSetCouponToCart} />
+                <CartSummary coupon={coupon} totalPrice={1000} />
+                <Button
+                  variant="contained"
+                  fullWidth
+                  // onClick={() => dispatch(setModal())}
+                >
+                  Finalizar Pedido
+                </Button>
+              </div>
+            </CartOrderContent>
           )}
           {isCartEmpty && <div>Vazio</div>}
         </CartOrder>

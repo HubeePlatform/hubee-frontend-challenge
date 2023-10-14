@@ -4,9 +4,10 @@ import { QtdButtonsContainer } from "./style";
 
 interface Props {
   handleSetCount: (value: number) => void;
+  qtd?: number;
 }
-export const QtdButtons: React.FC<Props> = ({ handleSetCount }) => {
-  const [count, setCount] = useState(1);
+export const QtdButtons: React.FC<Props> = ({ handleSetCount, qtd }) => {
+  const [count, setCount] = useState(qtd || 1);
 
   const handleIncrement = () => {
     setCount(count + 1);

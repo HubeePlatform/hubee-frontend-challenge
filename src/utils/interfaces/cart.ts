@@ -13,3 +13,9 @@ export interface Cart {
   items: CartItem[];
   totalPrice: number;
 }
+
+export interface Coupon {
+  key: string;
+  isActive: boolean;
+  rebatePercentage: number;
+}

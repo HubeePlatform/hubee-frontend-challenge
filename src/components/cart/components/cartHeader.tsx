@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { CartItem as CartItemInterface } from "../../../utils/interfaces";
 import { Order } from "./style";
-import { CartItem } from "./CartItem";
+import { CartItem } from "./cartItem";
 
 interface Props {
   items: CartItemInterface[];
@@ -9,7 +9,7 @@ interface Props {
 
 export const CartHeader: React.FC<Props> = ({ items }) => {
   return (
-    <>
+    <div>
       <Typography fontWeight={"bold"} align="center">
         Resumo do pedido
       </Typography>
@@ -17,6 +17,6 @@ export const CartHeader: React.FC<Props> = ({ items }) => {
         {items &&
           items.map((item: CartItemInterface) => <CartItem item={item} />)}
       </Order>
-    </>
+    </div>
   );
 };

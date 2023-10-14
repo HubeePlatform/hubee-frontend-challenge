@@ -10,12 +10,12 @@ interface Props {
 }
 
 export const CartItem: React.FC<Props> = ({ item }) => {
-  const [qtd, setQtd] = useState(1);
+  const [qtd, setQtd] = useState(item.amount || 1);
 
   return (
     <CartItemContainer>
       <Typography>{item.product.name}</Typography>
-      <QtdButtons handleSetCount={setQtd} />
+      <QtdButtons handleSetCount={setQtd} qtd={qtd} />
       <Typography align="right" fontWeight={"bold"} fontSize={"18px"}>
         {formatToMoney(item.product.price)}
       </Typography>
